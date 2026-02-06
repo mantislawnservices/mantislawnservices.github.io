@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Mantis Lawn Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2d5016;
+            --primary-light: #4a7c2a;
+            --accent: #7cb342;
+            --dark: #1a2f0d;
+            --light: #f4f7f0;
+            --text: #2c3e1f;
+            --text-light: #5a6b4d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(45, 80, 22, 0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Page Header */
+        .page-header {
+            margin-top: 80px;
+            padding: 5rem 2rem 3rem;
+            background: linear-gradient(135deg, #f4f7f0 0%, #e8f0dd 100%);
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .page-header p {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .services-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .service {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 2.5rem;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            background: var(--light);
+            border-radius: 20px;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            align-items: start;
+        }
+
+        .service:hover {
+            transform: translateX(10px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(45, 80, 22, 0.1);
+        }
+
+        .service-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            flex-shrink: 0;
+        }
+
+        .service-content h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .service-content p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            list-style: none;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            color: var(--text);
+            font-weight: 500;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+            text-align: center;
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: white;
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem 1.5rem;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1.5rem;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .service {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 2rem;
+            }
+
+            .service-icon {
+                width: 100px;
+                height: 100px;
+                font-size: 3rem;
+                margin: 0 auto;
+            }
+
+            .service-content h2 {
+                font-size: 1.6rem;
+                text-align: center;
+            }
+
+            .cta-section h2 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Mantis Lawn Services</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <h1>Our Services</h1>
+        <p>Professional lawn care solutions tailored to keep your property looking its absolute best</p>
+    </section>
+
+    <section class="services-section">
+        <div class="services-container">
+            <div class="service">
+                <div class="service-icon">🏡</div>
+                <div class="service-content">
+                    <h2>Lawn Mowing</h2>
+                    <p>Regular, professional mowing to keep your grass healthy and your property looking sharp. We maintain the perfect height for your grass type and season.</p>
+                    <ul class="service-features">
+                        <li>Precision cutting at optimal height</li>
+                        <li>Pattern mowing for professional appearance</li>
+                        <li>Grass clipping cleanup included</li>
+                        <li>Flexible scheduling options</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service">
+                <div class="service-icon">✂️</div>
+                <div class="service-content">
+                    <h2>Edging & Trimming</h2>
+                    <p>Clean, crisp edges along driveways, walkways, and flower beds. Professional trimming around obstacles, fences, and tight spaces.</p>
+                    <ul class="service-features">
+                        <li>Sharp, clean edges for defined borders</li>
+                        <li>Detail trimming around trees and obstacles</li>
+                        <li>Sidewalk and driveway edging</li>
+                        <li>Professional-grade equipment</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service">
+                <div class="service-icon">🍂</div>
+                <div class="service-content">
+                    <h2>Leaf Removal</h2>
+                    <p>Seasonal leaf cleanup to keep your lawn healthy and your property beautiful through fall and winter. Complete removal and disposal included.</p>
+                    <ul class="service-features">
+                        <li>Thorough lawn and bed cleanup</li>
+                        <li>Debris removal from gutters (upon request)</li>
+                        <li>Mulching or bagging options</li>
+                        <li>Seasonal scheduling available</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Let's Get Started</h2>
+        <p>Ready to transform your lawn? Contact us for a free quote</p>
+        <a href="contact.html" class="cta-button">Get Your Free Quote</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Mantis Lawn Services. All rights reserved.</p>
+    </footer>
+</body>
+</html>
